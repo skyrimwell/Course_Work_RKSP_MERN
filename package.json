@@ -1,0 +1,19 @@
+{
+  "name": "coursework",
+  "version": "1.0.0",
+  "description": "Coursework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyrimwell/Course_Work_RKSP_MERN.git"
+  },
+  "author": "Gorodnov S.A",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skyrimwell/Course_Work_RKSP_MERN/issues"
+  },
+  "homepage": "https://github.com/skyrimwell/Course_Work_RKSP_MERN#readme"
+}
