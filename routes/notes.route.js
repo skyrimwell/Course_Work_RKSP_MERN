@@ -1,6 +1,8 @@
+
 const {Router} = require('express')
 const router = Router()
 const Note = require('../models/Note')
+
 
 router.post('/addNote', async (req, res) => {
     try {
@@ -19,6 +21,19 @@ router.post('/addNote', async (req, res) => {
 
     } catch (error) {
         console.error(error)
+    }
+})
+
+router.get('/', async (req, res) =>{
+    try {
+        const { userId } = req.query
+        
+        const note = await Note.find({owner: userId})
+
+        res.json(note)
+
+    } catch (error) {
+        console.log(error)
     }
 })
 
