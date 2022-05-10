@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 5000
 
 app.use(express.json({extended: true}))
 app.use('/api/auth/', require('./routes/auth.route'))
+app.use('/api/notes/', require('./routes/notes.route'))
 dotenv.config({ path: ".env" });
 const dbKey = process.env.REACT_APP_ACCESS_KEY;
 async function start() {
