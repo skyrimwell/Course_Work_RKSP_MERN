@@ -37,4 +37,13 @@ router.get('/', async (req, res) =>{
     }
 })
 
+router.delete('/delete/:id', async (req, res) =>{
+    try {
+        const note = await Note.findOneAndDelete({_id: req.params.id})
+        res.json(note)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 module.exports = router
