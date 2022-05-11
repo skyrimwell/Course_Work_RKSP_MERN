@@ -9,20 +9,32 @@ function MainPage() {
   const [notes, setNotes] = useState([])
 
 
+  // const getNotes = useCallback(async () => {
+  //   try {
+  //     await axios.get('/api/Notes/', {
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       params: { userId }
+  //     }).then((response) => setNotes(response.data))
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }, [userId])
+
   const getNote = useCallback(async () => {
     try {
-      await axios.get('/api/Notes', {
+      await axios.get('/api/notes', {
         headers: {
           'Content-Type': 'application/json'
         },
-        params: { userId }
+        params: {userId}
       })
       .then((response) => setNotes(response.data))
     } catch (error) {
       console.log(error)
     }
   }, [userId])
-
 
   const createNote = useCallback(async () => {
     if (!text) return null;
@@ -39,6 +51,7 @@ function MainPage() {
     }
   }, [text, userId, notes])
 
+  
 
   return (
     <div className='container flex items-center justify-center h-screen '>
@@ -68,6 +81,12 @@ function MainPage() {
         </form>
 
         <h3>Добавленные заметки:</h3>
+        <button 
+          className='flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4  py-1 px-2 rounded'
+          onClick={getNote}      
+        >
+          Показать заметки
+        </button>
         <div className="notes">
           {
             notes.map((note, index) => {
