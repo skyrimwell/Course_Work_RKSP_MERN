@@ -4,3 +4,12 @@
     height: 300px;
 
 }
+
+.checked{
+    text-decoration: line-through;
+}
+
+.important{
+    color: red;
+    background-color: red;
+}

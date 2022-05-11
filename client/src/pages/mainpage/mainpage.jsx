@@ -63,6 +63,36 @@ function MainPage() {
     }
   }, [getNote])
 
+  const checkedNote = useCallback(async (id) => {
+    try {
+      await axios.put(`/api/Notes/check/${id}`, {id}, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(response => {
+        setNotes([...notes], response.data)
+        getNote()
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  },[getNote, notes])
+
+  const importantNote = useCallback(async (id) => {
+    try {
+      await axios.put(`/api/Notes/important/${id}`, {id}, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(response => {
+        setNotes([...notes], response.data)
+        getNote()
+      })
+    } catch (error) {
+      console.log(error)
+    }
+  },[getNote, notes])
+
   return (
     <div className='container flex items-center justify-center h-screen '>
       <div className="main-page">
@@ -100,13 +130,23 @@ function MainPage() {
         <div className="notes">
           {
             notes.map((note, index) => {
+              let cls = ['row notes-item']
+              
+              if(note.checked){
+                cls.push('checked') 
+              }
+
+              if(note.important){
+                cls.push('important') 
+              }
+
               return (
-                <div className="row notes-item" key={index}>
+                <div className={cls.join(' ')} key={index}>
                   <div className="col notes-num text-purple">{index + 1}</div>
                   <div className="col notes-text text-purple">{note.text}</div>
                   <div className="col notes-buttons text-purple">
-                    <button><svg className="w-6 h-6 text-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></button>
-                    <button><svg className="w-6 h-6 text-purple" fill="orange" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg></button>
+                    <button onClick={()=> checkedNote(note._id)}><svg className="w-6 h-6 text-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></button>
+                    <button onClick={()=> importantNote(note._id)}><svg className="w-6 h-6 text-purple" fill="orange" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg></button>
                     <button onClick={() => removeNote(note._id)}><svg className="w-6 h-6 text-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z"></path></svg></button>
                   </div>
                 </div>

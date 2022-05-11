@@ -1,11 +1,13 @@
 import React, { useState, useContext} from "react";
 import "./AuthPage.css"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, } from "react-router-dom";
 import axios from "axios";
 import {AuthContext} from '../../context/AuthContext'
 
 
 const AuthPage = () => {
+
+    
     const [form, setForm] = useState({
         email: '',
         password: ''
@@ -25,7 +27,6 @@ const AuthPage = () => {
                     'Content-Type': 'application/json'
                 }
             })
-            .then(response => console.log(response))
         } catch (error) {
             console.log(error);
         }

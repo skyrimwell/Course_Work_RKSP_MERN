@@ -46,4 +46,26 @@ router.delete('/delete/:id', async (req, res) =>{
     }
 })
 
+router.put('/check/:id', async (req, res) =>{
+    try {
+        const note = await Note.findOne({_id: req.params.id})
+        note.checked = !note.checked
+        await note.save()
+        res.json(note)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+router.put('/important/:id', async (req, res) =>{
+    try {
+        const note = await Note.findOne({_id: req.params.id})
+        note.important = !note.important
+        await note.save()
+        res.json(note)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
 module.exports = router
