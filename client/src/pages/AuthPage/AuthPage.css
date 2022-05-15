@@ -7,3 +7,79 @@
   .btn-blue:hover {
     @apply bg-blue-700;
   }
+
+
+
+.auth-page{
+  margin-left:15em;
+}
+.form-login {
+
+  background-image: linear-gradient(
+    50deg,
+    hsl(292deg 100% 20%) 0%,
+    hsl(308deg 100% 23%) 6%,
+    hsl(318deg 100% 28%) 13%,
+    hsl(326deg 100% 33%) 22%,
+    hsl(332deg 96% 38%) 30%,
+    hsl(343deg 72% 47%) 39%,
+    hsl(354deg 72% 55%) 48%,
+    hsl(6deg 82% 59%) 57%,
+    hsl(16deg 90% 58%) 65%,
+    hsl(25deg 95% 57%) 73%,
+    hsl(33deg 97% 55%) 81%,
+    hsl(41deg 96% 52%) 88%,
+    hsl(48deg 93% 50%) 94%,
+    hsl(55deg 85% 52%) 100%
+  ); 
+
+}
+
+
+.textOnYellow2{
+  padding-top: 0.5em;
+  color: rgb(70, 25, 79);
+  text-shadow: 4px 0px 4px #B119CE;
+  border-color: purple;
+  }
+
+
+.regBut{
+  margin-right: 0.5em;
+}
+
+.animated-border-button {
+
+  border: none;
+
+  outline: none;
+
+  position: relative;
+}
+
+.animated-border-button:before,
+.animated-border-button:after {
+  border: 0 solid transparent;
+  transition: all 0.3s;
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 24px;
+}
+
+.animated-border-button:before {
+  border-top: 2px solid #263059;
+  right: 0;
+  top: -4px;
+}
+
+.animated-border-button:after {
+  border-bottom: 2px solid #263059;
+  bottom: -4px;
+  left: 0;
+}
+
+.animated-border-button:hover:before,
+.animated-border-button:hover:after {
+  width: 100%;
+}

@@ -66,7 +66,7 @@ const AuthPage = () => {
                                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                                 onChange={changeHandler}
                                             />
-                                            <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                                            <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2 textOnYellow2" >Email</label>
                                         </div>
                                         <div className="input-field">
                                             <input
@@ -75,16 +75,16 @@ const AuthPage = () => {
                                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                                 onChange={changeHandler}
                                             />
-                                            <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                                            <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2 textOnYellow2">Пароль</label>
                                         </div>
                                     </div>
                                     <div className="row">
                                         <button 
-                                        className="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        className="animated-border-button textOnYellow2 border-2 mr-4 text-md font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline"
                                         onClick={loginHandler}>
                                             Войти
                                         </button>
-                                        <Link to="/registration" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">Нет Аккаунта?</Link>
+                                        <Link to="/registration" className="inline-block align-baseline font-bold text-sm no-underline">Нет Аккаунта?</Link>
                                     </div>
                                 </form>
                             </Route>
@@ -101,7 +101,7 @@ const AuthPage = () => {
                                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                                 onChange={changeHandler}
                                             />
-                                            <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                                            <label htmlFor="email" className="textOnYellow2 block text-gray-700 text-sm font-bold mb-2">Email</label>
                                         </div>
                                         <div className="input-field">
                                             <input
@@ -110,17 +110,17 @@ const AuthPage = () => {
                                                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                                 onChange={changeHandler}
                                             />
-                                            <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">Password</label>
+                                            <label htmlFor="password" className="textOnYellow2 block text-gray-700 text-sm font-bold mb-2">Пароль</label>
                                         </div>
                                     </div>
                                     <div className="row">
                                         <button
-                                            className="bg-blue-500 hover:bg-blue-700  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                            className="animated-border-button regBut textOnYellow2 border-2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                             onClick={registerHandler}
                                         >
                                             Регистрация
                                         </button>
-                                        <Link to="/login" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">Уже зарегистрированы?</Link>
+                                        <Link to="/login" className="inline-block text- align-baseline no-underline font-bold text-sm ">Уже c нами?</Link>
                                     </div>
                                 </form>
                             </Route>

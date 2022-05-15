@@ -1,3 +1,61 @@
+.navbar {
+    background: rgb(49, 28, 125);
+    background: linear-gradient(90deg, rgba(49, 28, 125, 1) 0%, rgba(74, 28, 130, 1) 15%, rgba(115, 33, 190, 1) 50%, rgba(195, 10, 122, 1) 100%);
+
+    -webkit-box-shadow: 0px 9px 52px -11px rgba(4, 3, 4, 0.72);
+    -moz-box-shadow: 0px 9px 52px -11px rgba(4, 3, 4, 0.72);
+    box-shadow: 0px 9px 52px -11px rgba(4, 3, 4, 0.72);
+    font-family: 'Comfortaa', cursive;
+
+
+}
+
+.logo {
+    color: orange;
+
+}
+
+.navBut {
+    color: orange;
+}
+
+.animated-border-button {
+
+    border: none;
+
+    outline: none;
+
+    position: relative;
+}
+
+.animated-border-button:before,
+.animated-border-button:after {
+    border: 0 solid transparent;
+    transition: all 0.3s;
+    content: '';
+    height: 0;
+    position: absolute;
+    width: 24px;
+}
+
+.animated-border-button:before {
+    border-top: 2px solid #263059;
+    right: 0;
+    top: -4px;
+}
+
+.animated-border-button:after {
+    border-bottom: 2px solid #263059;
+    bottom: -4px;
+    left: 0;
+}
+
+.animated-border-button:hover:before,
+.animated-border-button:hover:after {
+    width: 100%;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
