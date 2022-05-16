@@ -1,8 +1,9 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import MainPage from "./pages/mainpage/MainPage.jsx";
-import AuthPage from "./pages/AuthPage/AuthPage.jsx";
-
+import MainPage from './pages/mainpage/MainPage.jsx';
+import AuthPage from './pages/AuthPage/AuthPage.jsx';
+//const MainPage = require("./pages/mainpage/MainPage.jsx")
+//const AuthPage = require("./pages/AuthPage/AuthPage.jsx")
 
 export const useRoutes = (isLogin) => {
     if (isLogin) {
