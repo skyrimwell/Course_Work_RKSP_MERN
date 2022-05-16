@@ -122,7 +122,7 @@ function MainPage() {
           </div>
           <div className="row ">
             <button
-              className='textOnYellow mainBut flex-shrink-0 bg-black-500 hover:bg-black-700 border-black-500 hover:border-black-700 text-sm border-4  py-1 px-2 rounded'
+              className='outline-0 textOnYellow mainBut flex-shrink-0 bg-black-500 hover:bg-black-700 border-black-500 hover:border-black-700 text-sm border-4  py-1 px-2 rounded'
               onClick={createNote}
             >
               Сохранить

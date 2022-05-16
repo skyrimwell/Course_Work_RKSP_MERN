@@ -64,22 +64,20 @@ async (req, res) => {
         const {email, password} = req.body;
 
         const user = await User.findOne({ email})
+        const isMatch = await bcrypt.compare(req.body.password, user.password)
 
         if (!user) {
             return res.status(400).json({message: 'Такого Email не существует'})
         }
-
-        const isMatch = bcrypt.compare(password, user.password)
 
         if (!isMatch) {
             return res.status(400).json({message: 'Неправильный пароль'})
         }
 
         const jwtSecret = tokenSecret;
-        console.log(jwtSecret);
         const token = jwt.sign(
             {userId: user.id},
-            jwtSecret,
+            tokenSecret,
             {expiresIn: '1h'}
         )
 
