@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const dotenv = require("dotenv");
 
 const app = express()
-const PORT = process.env.PORT || 5000
+const PORT = app.listen(process.env.PORT || 5000)
 
 app.use(express.json({extended: true}))
 app.use('/api/auth/', require('./routes/auth.route'))
