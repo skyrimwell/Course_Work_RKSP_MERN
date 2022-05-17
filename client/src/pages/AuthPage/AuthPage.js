@@ -1,13 +1,12 @@
-import React, { useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import "./AuthPage.css"
-import { BrowserRouter as Router, Switch, Route, Link, } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
-import {AuthContext} from '../../context/AuthContext'
-
+import { AuthContext } from '../../context/AuthContext'
 
 const AuthPage = () => {
 
-    
+
     const [form, setForm] = useState({
         email: '',
         password: ''
@@ -17,16 +16,15 @@ const AuthPage = () => {
 
     const changeHandler = (event) => {
         setForm({ ...form, [event.target.name]: event.target.value });
-
     }
 
     const registerHandler = async () => {
         try {
-            await axios.post('/api/auth/registration', {...form }, {
+            await axios.post('/api/auth/registration', { ...form }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            })
+            }).then(() => { loginHandler() })
         } catch (error) {
             console.log(error);
         }
@@ -34,14 +32,14 @@ const AuthPage = () => {
 
     const loginHandler = async () => {
         try {
-            await axios.post('/api/auth/login', {...form }, {
+            await axios.post('/api/auth/login', { ...form }, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
             })
-            .then(response => {
-                login(response.data.token, response.data.userId)
-            })
+                .then(response => {
+                    login(response.data.token, response.data.userId)
+                })
         } catch (error) {
             console.log(error);
         }
@@ -54,8 +52,8 @@ const AuthPage = () => {
                     <div className="container flex items-center justify-center h-screen ">
                         <div className="auth-page w-full max-w-xs ">
                             <Route path="/login">
-                                <h3>Авторизация</h3>
-                                <form 
+                                <h3 className="maintext">Авторизация</h3>
+                                <form
                                     className="form form-login bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
                                     onSubmit={e => e.preventDefault()}>
                                     <div className="row mb-4">
@@ -79,9 +77,9 @@ const AuthPage = () => {
                                         </div>
                                     </div>
                                     <div className="row">
-                                        <button 
-                                        className="animated-border-button textOnYellow2 border-2 mr-4 text-md font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline"
-                                        onClick={loginHandler}>
+                                        <button
+                                            className="animated-border-button textOnYellow2 border-2 mr-4 text-md font-bold py-2 px-4 rounded-md focus:outline-none focus:shadow-outline"
+                                            onClick={loginHandler}>
                                             Войти
                                         </button>
                                         <Link to="/registration" className="inline-block align-baseline font-bold text-sm no-underline">Нет Аккаунта?</Link>
@@ -89,7 +87,7 @@ const AuthPage = () => {
                                 </form>
                             </Route>
                             <Route path="/registration">
-                                <h3>Регистрация</h3>
+                                <h3 className="maintext text-2xl">Регистрация</h3>
                                 <form
                                     className="form form-login bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
                                     onSubmit={e => e.preventDefault()}>

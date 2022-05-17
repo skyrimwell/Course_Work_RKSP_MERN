@@ -1,6 +1,4 @@
-
 body {
-
     text-align: center;
 }
 
@@ -12,58 +10,50 @@ body {
     overflow-y: auto;
     min-height: 350px;
     width: 70em;
-
 }
-.main-page{
+
+.main-page {
     margin-top: 50px;
-    margin-left:250px;
-	margin-bottom:20px;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-o-user-select: none;
-	user-select: none; 
-}
-.checked {
-    text-decoration: line-through;
+    margin-left: 250px;
+    margin-bottom: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
-.important {
-    color: red;
-    background-color: red;
-}
 #text {
-	width:500px;
-	overflow:hidden;
-	background-color:rgb(0, 0, 0);
-	color:#222;
-	font-weight:normal;
-	font-size:24px;
-	resize:none;
-	height: 145px;
-
-
-    background-image: linear-gradient(
-        250deg,
-        hsl(292deg 100% 20%) 0%,
-        hsl(317deg 100% 27%) 16%,
-        hsl(330deg 100% 36%) 32%,
-        hsl(349deg 69% 52%) 49%,
-        hsl(10deg 86% 59%) 65%,
-        hsl(27deg 96% 56%) 80%,
-        hsl(42deg 96% 51%) 94%,
-        hsl(55deg 85% 52%) 100%
-      );
-    /* background-color:hsl(55deg 85% 52%); */
-	padding-bottom:34px;
-	/* background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png); */
-	background-repeat:repeat-y, repeat;
-	-webkit-border-radius:12px;
-	border-radius:12px;
-	-webkit-box-shadow: 0px 2px 14px #000;
-	box-shadow: 0px 2px 14px #000;
-
+    width: 500px;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    color: #222;
+    font-weight: normal;
+    font-size: 24px;
+    resize: none;
+    height: 145px;
+    background-image: linear-gradient(45deg,
+            hsl(54deg 100% 67%) 0%,
+            hsl(53deg 99% 65%) 13%,
+            hsl(52deg 98% 64%) 24%,
+            hsl(50deg 98% 62%) 33%,
+            hsl(50deg 97% 60%) 42%,
+            hsl(49deg 96% 58%) 51%,
+            hsl(48deg 97% 56%) 58%,
+            hsl(47deg 98% 54%) 67%,
+            hsl(46deg 99% 52%) 76%,
+            hsl(45deg 100% 50%) 99%);
+    padding-bottom: 34px;
+    background-repeat: repeat-y, repeat;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 2px 14px #000;
+    box-shadow: 0px 2px 14px #000;
     border: 4px solid rgba(118, 22, 135, 0.867);
+}
+
+:focus-visible {
+    outline: none;
 }
 
 .noteEditor {
@@ -73,23 +63,21 @@ body {
     height: 250px;
     padding: 16px;
     margin: 16px auto;
-    background-image: linear-gradient(
-        50deg,
-        hsl(292deg 100% 20%) 0%,
-        hsl(308deg 100% 23%) 6%,
-        hsl(318deg 100% 28%) 13%,
-        hsl(326deg 100% 33%) 22%,
-        hsl(332deg 96% 38%) 30%,
-        hsl(343deg 72% 47%) 39%,
-        hsl(354deg 72% 55%) 48%,
-        hsl(6deg 82% 59%) 57%,
-        hsl(16deg 90% 58%) 65%,
-        hsl(25deg 95% 57%) 73%,
-        hsl(33deg 97% 55%) 81%,
-        hsl(41deg 96% 52%) 88%,
-        hsl(48deg 93% 50%) 94%,
-        hsl(55deg 85% 52%) 100%
-      );  
+    background-image: linear-gradient(50deg,
+            hsl(292deg 100% 20%) 0%,
+            hsl(308deg 100% 23%) 6%,
+            hsl(318deg 100% 28%) 13%,
+            hsl(326deg 100% 33%) 22%,
+            hsl(332deg 96% 38%) 30%,
+            hsl(343deg 72% 47%) 39%,
+            hsl(354deg 72% 55%) 48%,
+            hsl(6deg 82% 59%) 57%,
+            hsl(16deg 90% 58%) 65%,
+            hsl(25deg 95% 57%) 73%,
+            hsl(33deg 97% 55%) 81%,
+            hsl(41deg 96% 52%) 88%,
+            hsl(48deg 93% 50%) 94%,
+            hsl(55deg 85% 52%) 100%);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     border-radius: 5px;
     border: 2px solid rgb(98, 11, 133);
@@ -108,9 +96,8 @@ body {
     display: flex;
     float: left;
     overflow: hidden;
-    background-color: rgb(255, 217, 0);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    border-radius: 5px;
+    border-radius: 10px;
     border-color: purple;
     margin-bottom: 10px;
     white-space: pre-wrap;
@@ -125,31 +112,63 @@ body {
 .note {
     text-decoration: none;
     color: #000;
-    background: #ffc;
+    background-image: linear-gradient(45deg,
+            hsl(54deg 100% 67%) 1%,
+            hsl(53deg 99% 66%) 53%,
+            hsl(52deg 99% 64%) 60%,
+            hsl(51deg 98% 63%) 61%,
+            hsl(50deg 97% 61%) 63%,
+            hsl(49deg 96% 59%) 90%);
     display: block;
     height: 10em;
-    width: 10em;
+    width: 14em;
     padding-top: 1em;
     padding-left: 5px;
     padding-right: 5px;
     box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
-    overflow-y : auto;
+    overflow-y: auto;
 }
 
-.notes-buttons {}
-
 .mainBut {
-    color: orange;
+    color: hsl(49deg 96% 59%);
     margin-top: 10px;
-    border-color: rgb(255, 139, 7);
+    border-color: hsl(49deg 96% 59%);
     border-radius: 10px;
 }
 
-.textOnYellow{
-margin-left: 15px;
-color: rgb(70, 25, 79);
-text-shadow: 4px 0px 4px #B119CE;
-border-color: purple;
+.maintext {
+    color: hsl(49deg 96% 59%);
+}
+
+.textOnYellow {
+    margin-left: 15px;
+    color: rgb(70, 25, 79);
+    text-shadow: 4px 0px 4px #B119CE;
+    border-color: purple;
+}
+
+.notes-num {
+    padding-bottom: 0.4em
+}
+
+.important {
+    text-decoration: purple wavy underline;
+}
+
+.checked {
+    text-decoration: line-through;
+}
+
+.legend {
+    margin-left: 4px;
+}
+
+.notes-buttons :focus {
+    outline: none;
+}
+
+:focus {
+    outline: none;
 }
 
 @tailwind base;

@@ -1,12 +1,12 @@
 
-const {Router} = require('express')
+const { Router } = require('express')
 const router = Router()
 const Note = require('../models/Note')
 
 
 router.post('/addNote', async (req, res) => {
     try {
-        const {text, userId} = req.body
+        const { text, userId } = req.body
 
         const note = await new Note({
             text,
@@ -24,11 +24,11 @@ router.post('/addNote', async (req, res) => {
     }
 })
 
-router.get('/', async (req, res) =>{
+router.get('/', async (req, res) => {
     try {
         const { userId } = req.query
-        
-        const note = await Note.find({owner: userId})
+
+        const note = await Note.find({ owner: userId })
 
         res.json(note)
 
@@ -37,18 +37,18 @@ router.get('/', async (req, res) =>{
     }
 })
 
-router.delete('/delete/:id', async (req, res) =>{
+router.delete('/delete/:id', async (req, res) => {
     try {
-        const note = await Note.findOneAndDelete({_id: req.params.id})
+        const note = await Note.findOneAndDelete({ _id: req.params.id })
         res.json(note)
     } catch (error) {
         console.log(error)
     }
 })
 
-router.put('/check/:id', async (req, res) =>{
+router.put('/check/:id', async (req, res) => {
     try {
-        const note = await Note.findOne({_id: req.params.id})
+        const note = await Note.findOne({ _id: req.params.id })
         note.checked = !note.checked
         await note.save()
         res.json(note)
@@ -57,9 +57,9 @@ router.put('/check/:id', async (req, res) =>{
     }
 })
 
-router.put('/important/:id', async (req, res) =>{
+router.put('/important/:id', async (req, res) => {
     try {
-        const note = await Note.findOne({_id: req.params.id})
+        const note = await Note.findOne({ _id: req.params.id })
         note.important = !note.important
         await note.save()
         res.json(note)

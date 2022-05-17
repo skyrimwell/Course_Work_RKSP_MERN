@@ -1,8 +1,7 @@
 body {
-    background: rgb(45,3,74);
-background: linear-gradient(90deg, rgba(45,3,74,1) 17%, rgba(74,9,134,1) 49%, rgba(176,20,195,1) 100%);
+    background: rgb(45, 3, 74);
+    background: linear-gradient(90deg, rgba(45, 3, 74, 1) 17%, rgba(74, 9, 134, 1) 49%, rgba(176, 20, 195, 1) 100%);
     font-family: 'Comfortaa', cursive;
-    
     color: orange;
 }
 
